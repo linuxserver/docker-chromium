@@ -519,7 +519,7 @@ perl-switch                                                                   2.
 perl-test-pod                                                                 1.52-r2                                              apk        
 perl-try-tiny                                                                 0.31-r0                                              apk        
 perl-yaml-tiny                                                                1.73-r2                                              apk        
-pipewire-libs                                                                 0.3.60-r3                                            apk        
+pipewire-libs                                                                 0.3.61-r0                                            apk        
 pixman                                                                        0.42.2-r0                                            apk        
 pkgconf                                                                       1.9.4-r0                                             apk        
 procps                                                                        3.3.17-r2                                            apk        
