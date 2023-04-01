@@ -34,7 +34,7 @@ custom_params:
 # optional variables
 opt_param_usage_include_env: true
 opt_param_env_vars:
-  - { env_var: "CHROME_CLI", env_value: "\"https://www.linuxserver.io/\"", desc: "Specify one or multiple Chromium CLI flags, this string will be passed to the application in full."}
+  - { env_var: "CHROME_CLI", env_value: "https://www.linuxserver.io/", desc: "Specify one or multiple Chromium CLI flags, this string will be passed to the application in full."}
 opt_security_opt_param: true
 opt_security_opt_param_vars:
   - { run_var: "seccomp=unconfined", compose_var: "seccomp:unconfined", desc: "For Docker Engine only, many modern gui apps need this to function on older hosts as syscalls are unknown to Docker. Chromium runs in no-sandbox test mode without it." }
