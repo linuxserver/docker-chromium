@@ -31,6 +31,10 @@ param_ports:
   - { external_port: "3001", internal_port: "3001", port_desc: "HTTPS Chromium desktop gui." }
 custom_params:
   - { name: "shm-size", name_compose: "shm_size", value: "1gb",desc: "This is needed for any modern website to function like youtube." }
+# optional variables
+opt_param_usage_include_env: true
+opt_param_env_vars:
+  - { env_var: "CHROME_CLI", env_value: "\"https://www.linuxserver.io/\"", desc: "Specify one or multiple Chromium CLI flags, this string will be passed to the application in full."}
 opt_security_opt_param: true
 opt_security_opt_param_vars:
   - { run_var: "seccomp=unconfined", compose_var: "seccomp:unconfined", desc: "For Docker Engine only, many modern gui apps need this to function on older hosts as syscalls are unknown to Docker. Chromium runs in no-sandbox test mode without it." }
@@ -71,4 +75,5 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "01.04.23:", desc: "Preserve arguments passed to Chromium and restructure to use wrapper." }
   - { date: "18.03.23:", desc: "Initial release." }
