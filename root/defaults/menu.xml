@@ -2,6 +2,6 @@
 <openbox_menu xmlns="http://openbox.org/3.4/menu">
 <menu id="root-menu" label="MENU">
 <item label="xterm" icon="/usr/share/pixmaps/xterm-color_48x48.xpm"><action name="Execute"><command>/usr/bin/xterm</command></action></item>
-<item label="Chromium" icon="/usr/share/icons/hicolor/48x48/apps/chromium.png"><action name="Execute"><command>/usr/bin/chromium-browser --password-store=basic --no-sandbox  --ignore-gpu-blocklist --user-data-dir --no-first-run --simulate-outdated-no-au='Tue, 31 Dec 2099 23:59:59 GMT' --start-maximized --test-type</command></action></item>
+<item label="Chromium" icon="/usr/share/icons/hicolor/48x48/apps/chromium.png"><action name="Execute"><command>/usr/bin/chromium-browser</command></action></item>
 </menu>
 </openbox_menu>
