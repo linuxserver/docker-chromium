@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 BIN=/usr/lib/chromium/chromium-launcher.sh
 
