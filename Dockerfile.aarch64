@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-kasmvnc:arm64v8-alpine318
+FROM ghcr.io/linuxserver/baseimage-kasmvnc:arm64v8-debianbookworm
 
 # set version label
 ARG BUILD_DATE
@@ -11,10 +11,15 @@ ENV TITLE=Chromium
 
 RUN \
   echo "**** install packages ****" && \
-  apk add --no-cache \
+  apt-get update && \
+  apt-get install -y --no-install-recommends \
     chromium && \
   echo "**** cleanup ****" && \
+  apt-get autoclean && \
   rm -rf \
+    /config/.cache \
+    /var/lib/apt/lists/* \
+    /var/tmp/* \
     /tmp/*
 
 # add local files
