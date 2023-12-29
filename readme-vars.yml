@@ -76,6 +76,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "13.05.23:", desc: "Rebase to Debian Bookworm." }
   - { date: "13.05.23:", desc: "Rebase to Alpine 3.18." }
   - { date: "01.04.23:", desc: "Preserve arguments passed to Chromium and restructure to use wrapper." }
   - { date: "18.03.23:", desc: "Initial release." }

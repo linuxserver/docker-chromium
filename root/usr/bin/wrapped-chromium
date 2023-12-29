@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BIN=/usr/lib/chromium/chromium-launcher.sh
+BIN=/usr/bin/chromium
 
 # Run normally on privved containers or modified un non priv
 if grep -q 'Seccomp:\t0' /proc/1/status; then
