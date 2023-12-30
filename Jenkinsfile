@@ -23,7 +23,7 @@ pipeline {
     DOCKERHUB_IMAGE = 'linuxserver/chromium'
     DEV_DOCKERHUB_IMAGE = 'lsiodev/chromium'
     PR_DOCKERHUB_IMAGE = 'lspipepr/chromium'
-    DIST_IMAGE = 'alpine'
+    DIST_IMAGE = 'ubuntu'
     MULTIARCH = 'true'
     CI = 'true'
     CI_WEB = 'true'
