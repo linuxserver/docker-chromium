@@ -7,7 +7,6 @@ project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/ma
 project_blurb: "[Chromium]({{ project_url }}) is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
 project_categories: "Web Browser"
-project_categories: "Web"
 project_blurb_optional_extras_enabled: false
 # supported architectures
 available_architectures:
