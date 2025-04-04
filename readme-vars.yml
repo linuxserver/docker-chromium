@@ -109,6 +109,7 @@ init_diagram: |
   "chromium:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "03.04.25:", desc: "Update chromium launch options to improve performance."}
   - {date: "10.02.24:", desc: "Update Readme with new env vars and ingest proper PWA icon."}
   - {date: "08.01.24:", desc: "Fix re-launch issue for chromium by purging temp files on launch."}
   - {date: "29.12.23:", desc: "Rebase to Debian Bookworm."}
