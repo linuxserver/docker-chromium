@@ -15,7 +15,7 @@ jobs:
 
       - name: External Trigger Scheduler
         run: |
-          printf "# External trigger scheduler for docker-chromium\n\n" >> $GITHUB_STEP_SUMMARY
+          printf "# External trigger scheduler for docker-google-chrome\n\n" >> $GITHUB_STEP_SUMMARY
           printf "Found the branches:\n\n%s\n" "$(git for-each-ref --format='- %(refname:lstrip=3)' refs/remotes)" >> $GITHUB_STEP_SUMMARY
           for br in $(git for-each-ref --format='%(refname:lstrip=3)' refs/remotes)
           do
@@ -24,18 +24,18 @@ jobs:
               continue
             fi
             printf "\n## Evaluating \`%s\`\n\n" ${br} >> $GITHUB_STEP_SUMMARY
-            ls_jenkins_vars=$(curl -sX GET https://raw.githubusercontent.com/linuxserver/docker-chromium/${br}/jenkins-vars.yml)
+            ls_jenkins_vars=$(curl -sX GET https://raw.githubusercontent.com/linuxserver/docker-google-chrome/${br}/jenkins-vars.yml)
             ls_branch=$(echo "${ls_jenkins_vars}" | yq -r '.ls_branch')
             ls_trigger=$(echo "${ls_jenkins_vars}" | yq -r '.external_type')
             if [[ "${br}" == "${ls_branch}" ]] && [[ "${ls_trigger}" != "os" ]]; then
               echo "Branch appears to be live and trigger is not os; checking workflow." >> $GITHUB_STEP_SUMMARY
-              if curl -sfX GET https://raw.githubusercontent.com/linuxserver/docker-chromium/${br}/.github/workflows/external_trigger.yml > /dev/null 2>&1; then
+              if curl -sfX GET https://raw.githubusercontent.com/linuxserver/docker-google-chrome/${br}/.github/workflows/external_trigger.yml > /dev/null 2>&1; then
                 echo "Triggering external trigger workflow for branch." >> $GITHUB_STEP_SUMMARY
                 curl -iX POST \
                   -H "Authorization: token ${{ secrets.CR_PAT }}" \
                   -H "Accept: application/vnd.github.v3+json" \
                   -d "{\"ref\":\"refs/heads/${br}\"}" \
-                  https://api.github.com/repos/linuxserver/docker-chromium/actions/workflows/external_trigger.yml/dispatches
+                  https://api.github.com/repos/linuxserver/docker-google-chrome/actions/workflows/external_trigger.yml/dispatches
               else
                 echo "Skipping branch due to no external trigger workflow present." >> $GITHUB_STEP_SUMMARY
               fi

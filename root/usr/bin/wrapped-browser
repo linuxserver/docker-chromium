@@ -1,0 +1,63 @@
+#!/bin/bash
+
+ARCH=$(dpkg --print-architecture)
+
+if [ "$ARCH" = "amd64" ]; then
+  BIN=/opt/google/chrome/chrome
+  CONFIG_SINGLETON_PATH="$HOME/.config/google-chrome/Singleton*" # Path for Singleton
+  USER_DATA_DIR_PATH="$HOME/.config/google-chrome" # General user data directory
+  PROC_NAME="chrome"
+  EXTRA_FLAGS=() # No --test-type for chrome
+else
+  # Fallback for arm64 and other architectures
+  BIN=/usr/bin/chromium
+  CONFIG_SINGLETON_PATH="$HOME/.config/chromium/Singleton*" # Path for Singleton
+  USER_DATA_DIR_PATH="$HOME/.config/chromium" # General user data directory
+  PROC_NAME="chromium"
+  EXTRA_FLAGS=(--test-type) # Keep --test-type for chromium
+fi
+
+# Cleanup
+# Check if the browser process is running
+if ! pgrep -x "${PROC_NAME}" > /dev/null; then
+  # If not running, attempt to remove the Singleton file
+  # Check if the directory exists before trying to remove the file
+  if [ -d "$(dirname "${CONFIG_SINGLETON_PATH}")" ]; then
+    rm -f "${CONFIG_SINGLETON_PATH}"
+  fi
+fi
+
+# Base flags for both browsers
+FLAGS=(
+  --no-first-run
+  --password-store=basic
+  --simulate-outdated-no-au='Tue, 31 Dec 2099 23:59:59 GMT'
+  --start-maximized
+  # IMPORTANT: --user-data-dir must be correctly set up.
+  # The script originally had --user-data-dir without a path, implying it takes the next arg.
+  # This is risky if CHROME_CLI ($@) doesn't provide one.
+  # A safer approach is to provide a default path if not overridden by CHROME_CLI.
+  # However, the original script's behavior was to pass --user-data-dir as a flag name,
+  # and then "$@" would supply the path if the user set CHROME_CLI to e.g. "--user-data-dir=/custom/path"
+  # Or, if CHROME_CLI was just e.g. "https://linuxserver.io", then --user-data-dir would effectively use the default profile path.
+  # Let's stick to the original behavior of just passing the flag name, assuming default profile path or user override.
+  # The original script had --user-data-dir \ (then next line "$@"). This means it's a flag name.
+  # Let's ensure the user-data-dir is explicitly specified to avoid ambiguity, pointing to our config locations.
+  "--user-data-dir=${USER_DATA_DIR_PATH}"
+)
+
+# Add --no-sandbox if not seccomp:0 (unconfined)
+# Also, add EXTRA_FLAGS (e.g. --test-type for chromium) under the same condition
+if ! grep -q 'Seccomp:.0' /proc/1/status; then
+  FLAGS+=(--no-sandbox)
+  # Only add --test-type for Chromium under these conditions
+  if [ "$ARCH" != "amd64" ]; then
+    FLAGS+=("${EXTRA_FLAGS[@]}")
+  fi
+fi
+
+# Append any user-provided arguments from CHROME_CLI
+FLAGS+=("$@")
+
+# Launch the browser
+"${BIN}" "${FLAGS[@]}" > /dev/null 2>&1

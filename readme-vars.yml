@@ -1,10 +1,10 @@
 ---
 
 # project information
-project_name: chromium
-project_url: "https://www.chromium.org/chromium-projects/"
-project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/chromium-logo.png"
-project_blurb: "[Chromium]({{ project_url }}) is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web."
+project_name: google-chrome
+project_url: "https://www.google.com/chrome/"
+project_logo: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Chrome_icon_%28September_2014%29.svg"
+project_blurb: "[Google Chrome]({{ project_url }}) is a web browser developed by Google. This container provides a way to run Google Chrome seamlessly. The amd64 version uses Google Chrome, while the arm64v8 version uses Chromium as the underlying browser due to Google Chrome not being officially available for arm64."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
 project_categories: "Web Browser"
 project_blurb_optional_extras_enabled: false
@@ -25,17 +25,17 @@ param_volumes:
   - {vol_path: "/config", vol_host_path: "/path/to/config", desc: "Users home directory in the container, stores local files and settings"}
 param_usage_include_ports: true
 param_ports:
-  - {external_port: "3000", internal_port: "3000", port_desc: "Chromium desktop gui."}
-  - {external_port: "3001", internal_port: "3001", port_desc: "HTTPS Chromium desktop gui."}
+  - {external_port: "3000", internal_port: "3000", port_desc: "Google Chrome desktop gui."}
+  - {external_port: "3001", internal_port: "3001", port_desc: "HTTPS Google Chrome desktop gui."}
 custom_params:
   - {name: "shm-size", name_compose: "shm_size", value: "1gb", desc: "This is needed for any modern website to function like youtube."}
 # optional variables
 opt_param_usage_include_env: true
 opt_param_env_vars:
-  - {env_var: "CHROME_CLI", env_value: "https://www.linuxserver.io/", desc: "Specify one or multiple Chromium CLI flags, this string will be passed to the application in full."}
+  - {env_var: "CHROME_CLI", env_value: "https://www.linuxserver.io/", desc: "Specify one or multiple browser CLI flags (Google Chrome on amd64, Chromium on arm64), this string will be passed to the application in full."}
 opt_security_opt_param: true
 opt_security_opt_param_vars:
-  - {run_var: "seccomp=unconfined", compose_var: "seccomp:unconfined", desc: "For Docker Engine only, many modern gui apps need this to function on older hosts as syscalls are unknown to Docker. Chromium runs in no-sandbox test mode without it."}
+  - {run_var: "seccomp=unconfined", compose_var: "seccomp:unconfined", desc: "For Docker Engine only, many modern gui apps need this to function on older hosts as syscalls are unknown to Docker. The browser (Chromium on arm64, and potentially Google Chrome on amd64 in some environments) may require this to run without sandbox."}
 # Kasm blurb settings
 kasm_blurb: true
 show_nvidia: true
@@ -51,7 +51,7 @@ app_setup_block: |
   * https://yourhost:3001/
 # init diagram
 init_diagram: |
-  "chromium:latest": {
+  "google-chrome:latest": {
     docker-mods
     base {
       fix-attr +\nlegacy cont-init
@@ -108,9 +108,10 @@ init_diagram: |
   Base Images: {
     "baseimage-kasmvnc:debianbookworm" <- "baseimage-debian:bookworm"
   }
-  "chromium:latest" <- Base Images
+  "google-chrome:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "XX.XX.XX:", desc: "Replace Chromium with Google Chrome on amd64; arm64 continues with Chromium backend. Update wrapper script, documentation, and build configurations."}
   - {date: "03.04.25:", desc: "Update chromium launch options to improve performance."}
   - {date: "10.02.24:", desc: "Update Readme with new env vars and ingest proper PWA icon."}
   - {date: "08.01.24:", desc: "Fix re-launch issue for chromium by purging temp files on launch."}
