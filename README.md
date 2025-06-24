@@ -104,6 +104,11 @@ services:
               capabilities: [compute,video,graphics,utility]
 ```
 
+### Strict reverse proxies
+
+This image uses a self-signed certificate by default. This naturally means the scheme is `https`.
+If you are using a reverse proxy which validates certificates, you need to [disable this check for the container](https://docs.linuxserver.io/faq#strict-proxy).
+
 ## Usage
 
 To help you get started creating a container from this image you can either use docker-compose or the docker cli.
