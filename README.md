@@ -93,8 +93,8 @@ And to assign the GPU in compose:
 
 ```
 services:
-  webtop:
-    image: lscr.io/linuxserver/suyu:latest
+  chromium:
+    image: lscr.io/linuxserver/chromium:latest
     deploy:
       resources:
         reservations:

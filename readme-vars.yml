@@ -73,8 +73,8 @@ app_setup_block: |
 
   ```
   services:
-    webtop:
-      image: lscr.io/linuxserver/suyu:latest
+    chromium:
+      image: lscr.io/linuxserver/chromium:latest
       deploy:
         resources:
           reservations:
