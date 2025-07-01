@@ -57,6 +57,15 @@ The architectures supported by this image are:
 | arm64 | ✅ | arm64v8-\<version tag\> |
 | armhf | ❌ | |
 
+## Version Tags
+
+This image provides various versions that are available via tags. Please read the descriptions carefully and exercise caution when using unstable or development tags.
+
+| Tag | Available | Description |
+| :----: | :----: |--- |
+| latest | ✅ | Latest releases using the selkies base |
+| kasm | ✅ | Latest releases using the kasmvnc base |
+
 ## Application Setup
 
 The application can be accessed at:
@@ -132,7 +141,7 @@ services:
       - TZ=Etc/UTC
       - CHROME_CLI=https://www.linuxserver.io/ #optional
     volumes:
-      - /path/to/config:/config
+      - /path/to/chromium/config:/config
     ports:
       - 3000:3000
       - 3001:3001
@@ -152,7 +161,7 @@ docker run -d \
   -e CHROME_CLI=https://www.linuxserver.io/ `#optional` \
   -p 3000:3000 \
   -p 3001:3001 \
-  -v /path/to/config:/config \
+  -v /path/to/chromium/config:/config \
   --shm-size="1gb" \
   --restart unless-stopped \
   lscr.io/linuxserver/chromium:latest
@@ -336,6 +345,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **01.07.25:** - Add Kasm branch.
 * **24.06.25:** - Rebase to Selkies.
 * **03.04.25:** - Update chromium launch options to improve performance.
 * **10.02.24:** - Update Readme with new env vars and ingest proper PWA icon.
