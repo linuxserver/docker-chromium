@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1
+
 FROM ghcr.io/linuxserver/baseimage-kasmvnc:arm64v8-debianbookworm
 
 # set version label
@@ -19,6 +21,7 @@ RUN \
   apt-get install -y --no-install-recommends \
     chromium \
     chromium-l10n && \
+  printf "Linuxserver.io version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
