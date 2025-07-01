@@ -13,16 +13,16 @@ available_architectures:
   - {arch: "{{ arch_x86_64 }}", tag: "latest"}
   - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
 # development version
-development_versions: false
+development_versions: true
+development_versions_items:
+  - {tag: "latest", desc: "Latest releases using the selkies base"}
+  - {tag: "kasm", desc: "Latest releases using the kasmvnc base"}
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
-param_usage_include_env: true
-param_env_vars:
-  - {env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London."}
 param_usage_include_vols: true
 param_volumes:
-  - {vol_path: "/config", vol_host_path: "/path/to/config", desc: "Users home directory in the container, stores local files and settings"}
+  - {vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "Users home directory in the container, stores local files and settings"}
 param_usage_include_ports: true
 param_ports:
   - {external_port: "3000", internal_port: "3000", port_desc: "Chromium desktop gui."}
