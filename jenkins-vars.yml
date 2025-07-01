@@ -4,7 +4,7 @@
 project_name: docker-chromium
 external_type: os
 release_type: prerelease
-release_tag: latest
+release_tag: kasm
 ls_branch: kasm
 repo_vars:
   - BUILD_VERSION_ARG = 'CHROMIUM_VERSION'

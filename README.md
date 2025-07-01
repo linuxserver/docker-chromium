@@ -37,7 +37,7 @@ Find us at:
 [![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/chromium.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=pulls&logo=docker)](https://hub.docker.com/r/linuxserver/chromium)
 [![Docker Stars](https://img.shields.io/docker/stars/linuxserver/chromium.svg?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=stars&logo=docker)](https://hub.docker.com/r/linuxserver/chromium)
 [![Jenkins Build](https://img.shields.io/jenkins/build?labelColor=555555&logoColor=ffffff&style=for-the-badge&jobUrl=https%3A%2F%2Fci.linuxserver.io%2Fjob%2FDocker-Pipeline-Builders%2Fjob%2Fdocker-chromium%2Fjob%2Fkasm%2F&logo=jenkins)](https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-chromium/job/kasm/)
-[![LSIO CI](https://img.shields.io/badge/dynamic/yaml?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=CI&query=CI&url=https%3A%2F%2Fci-tests.linuxserver.io%2Flinuxserver%2Fchromium%2Flatest%2Fci-status.yml)](https://ci-tests.linuxserver.io/linuxserver/chromium/latest/index.html)
+[![LSIO CI](https://img.shields.io/badge/dynamic/yaml?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=CI&query=CI&url=https%3A%2F%2Fci-tests.linuxserver.io%2Flinuxserver%2Fchromium%2Fkasm%2Fci-status.yml)](https://ci-tests.linuxserver.io/linuxserver/chromium/kasm/index.html)
 
 [Chromium](https://www.chromium.org/chromium-projects/) is an open-source browser project that aims to build a safer, faster, and more stable way for all users to experience the web.
 
@@ -47,7 +47,7 @@ Find us at:
 
 We utilise the docker manifest for multi-platform awareness. More information is available from docker [here](https://distribution.github.io/distribution/spec/manifest-v2-2/#manifest-list) and our announcement [here](https://blog.linuxserver.io/2019/02/21/the-lsio-pipeline-project/).
 
-Simply pulling `lscr.io/linuxserver/chromium:latest` should retrieve the correct image for your arch, but you can also pull specific arch images via tags.
+Simply pulling `lscr.io/linuxserver/chromium:kasm` should retrieve the correct image for your arch, but you can also pull specific arch images via tags.
 
 The architectures supported by this image are:
 
@@ -166,7 +166,7 @@ And to assign the GPU in compose:
 ```
 services:
   chromium:
-    image: lscr.io/linuxserver/chromium:latest
+    image: lscr.io/linuxserver/chromium:kasm
     deploy:
       resources:
         reservations:
@@ -211,7 +211,7 @@ To help you get started creating a container from this image you can either use 
 ---
 services:
   chromium:
-    image: lscr.io/linuxserver/chromium:latest
+    image: lscr.io/linuxserver/chromium:kasm
     container_name: chromium
     security_opt:
       - seccomp:unconfined #optional
@@ -244,7 +244,7 @@ docker run -d \
   -v /path/to/chromium/config:/config \
   --shm-size="1gb" \
   --restart unless-stopped \
-  lscr.io/linuxserver/chromium:latest
+  lscr.io/linuxserver/chromium:kasm
 ```
 
 ## Parameters
@@ -327,7 +327,7 @@ We publish various [Docker Mods](https://github.com/linuxserver/docker-mods) to 
 * Image version number:
 
     ```bash
-    docker inspect -f '{{ index .Config.Labels "build_version" }}' lscr.io/linuxserver/chromium:latest
+    docker inspect -f '{{ index .Config.Labels "build_version" }}' lscr.io/linuxserver/chromium:kasm
     ```
 
 ## Updating Info
@@ -375,7 +375,7 @@ Below are the instructions for updating containers:
 * Update the image:
 
     ```bash
-    docker pull lscr.io/linuxserver/chromium:latest
+    docker pull lscr.io/linuxserver/chromium:kasm
     ```
 
 * Stop the running container:
@@ -412,7 +412,7 @@ cd docker-chromium
 docker build \
   --no-cache \
   --pull \
-  -t lscr.io/linuxserver/chromium:latest .
+  -t lscr.io/linuxserver/chromium:kasm .
 ```
 
 The ARM variants can be built on x86_64 hardware and vice versa using `lscr.io/linuxserver/qemu-static`
