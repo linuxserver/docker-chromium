@@ -104,6 +104,7 @@ This container is based on [Docker Baseimage Selkies](https://github.com/linuxse
 | `START_DOCKER` | If set to `false`, the privileged Docker-in-Docker setup will not start automatically. |
 | `DISABLE_IPV6` | Set to `true` to disable IPv6 support in the container. | 
 | `LC_ALL` | Sets the container's locale, e.g., `fr_FR.UTF-8`. |
+| `DRINODE` | If mounting in /dev/dri for DRI3 GPU Acceleration allows you to specify the device to use IE `/dev/dri/renderD128` |
 | `NO_DECOR` | If set, applications will run without window borders, suitable for PWA usage. |
 | `NO_FULL` | If set, applications will not be automatically fullscreened. |
 | `DISABLE_ZINK` | If set, Zink-related environment variables will not be configured when a video card is detected. |
@@ -116,6 +117,7 @@ This container is based on [Docker Baseimage Selkies](https://github.com/linuxse
 | :----: | --- |
 | `--privileged` | Starts a Docker-in-Docker (DinD) environment. For better performance, mount the Docker data directory from the host, e.g., `-v /path/to/docker-data:/var/lib/docker`. |
 | `-v /var/run/docker.sock:/var/run/docker.sock` | Mounts the host's Docker socket to manage host containers from within this container. |
+| `--device /dev/dri:/dev/dri` | Mount a GPU into the container, this can be used in conjunction with the `DRINODE` environment variable to leverage a host video card for GPU accelerated applications. Only **Open Source** drivers are supported IE (Intel,AMDGPU,Radeon,ATI,Nouveau) |
 
 ### Language Support - Internationalization
 
@@ -131,6 +133,24 @@ To launch the desktop session in a different language, set the `LC_ALL` environm
 *   `-e LC_ALL=fr_FR.UTF-8` - French
 *   `-e LC_ALL=nl_NL.UTF-8` - Netherlands
 *   `-e LC_ALL=it_IT.UTF-8` - Italian
+
+### DRI3 GPU Acceleration
+
+For accelerated apps or games, render devices can be mounted into the container and leveraged by applications using:
+
+`--device /dev/dri:/dev/dri`
+
+This feature only supports **Open Source** GPU drivers:
+
+| Driver | Description |
+| :----: | --- |
+| Intel | i965 and i915 drivers for Intel iGPU chipsets |
+| AMD | AMDGPU, Radeon, and ATI drivers for AMD dedicated or APU chipsets |
+| NVIDIA | nouveau2 drivers only, closed source NVIDIA drivers lack DRI3 support |
+
+The `DRINODE` environment variable can be used to point to a specific GPU.
+
+DRI3 will work on aarch64 given the correct drivers are installed inside the container for your chipset.
 
 ### Nvidia GPU Support
 
