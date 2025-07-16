@@ -636,8 +636,8 @@ libglvnd0                                                                     1.
 libglx-mesa0                                                                  25.0.4-1~bpo12+1                        deb                         
 libglx0                                                                       1.6.0-1                                 deb                         
 libgmp10                                                                      2:6.2.1+dfsg1-1.1                       deb                         
-libgnutls-dane0                                                               3.7.9-2+deb12u4                         deb                         
-libgnutls30                                                                   3.7.9-2+deb12u4                         deb                         
+libgnutls-dane0                                                               3.7.9-2+deb12u5                         deb                         
+libgnutls30                                                                   3.7.9-2+deb12u5                         deb                         
 libgomp1                                                                      12.2.0-14+deb12u1                       deb                         
 libgpg-error0                                                                 1.46-1                                  deb                         
 libgpm2                                                                       1.20.7-10+b1                            deb                         
