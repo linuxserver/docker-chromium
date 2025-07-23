@@ -1,10 +1,16 @@
 NAME                                                                          VERSION                                 TYPE                       
 adduser                                                                       3.134                                   deb                         
 adwaita-icon-theme                                                            43-1                                    deb                         
+aiohappyeyeballs                                                              2.6.1                                   python                      
+aiohttp                                                                       3.12.14                                 python                      
+aioice                                                                        0.10.1                                  python                      
+aiosignal                                                                     1.4.0                                   python                      
 apt                                                                           2.6.1                                   deb                         
 apt-transport-https                                                           2.6.1                                   deb                         
 apt-utils                                                                     2.6.1                                   deb                         
 at-spi2-common                                                                2.46.0-5                                deb                         
+attrs                                                                         25.3.0                                  python                      
+av                                                                            14.4.0                                  python                      
 base-files                                                                    12.4+deb12u11                           deb                         
 base-passwd                                                                   3.6.1                                   deb                         
 bash                                                                          5.2.15-2+b8                             deb                         
@@ -18,6 +24,7 @@ bsdextrautils                                                                 2.
 bsdutils                                                                      1:2.38.1-5+deb12u3                      deb                         
 ca-certificates                                                               20230311+deb12u1                        deb                         
 catatonit                                                                     0.1.7-1+b1                              deb                         
+cffi                                                                          1.17.1                                  python                      
 chromium                                                                      138.0.7204.157-1~deb12u1                deb                         
 chromium-common                                                               138.0.7204.157-1~deb12u1                deb                         
 chromium-l10n                                                                 138.0.7204.157-1~deb12u1                deb                         
@@ -35,6 +42,7 @@ cpp-12                                                                        12
 cron                                                                          3.0pl1-162                              deb                         
 cron-daemon-common                                                            3.0pl1-162                              deb                         
 cryptography                                                                  38.0.4                                  python     (+1 duplicate)   
+cryptography                                                                  45.0.5                                  python                      
 curl                                                                          7.88.1-10+deb12u12                      deb                         
 dario.cat/mergo                                                               v1.0.0                                  go-module                   
 dario.cat/mergo                                                               v1.0.1                                  go-module  (+1 duplicate)   
@@ -56,6 +64,7 @@ dirmngr                                                                       2.
 distro                                                                        1.8.0                                   python                      
 distro-info-data                                                              0.58+deb12u4                            deb                         
 dmsetup                                                                       2:1.02.185-2                            deb                         
+dnspython                                                                     2.7.0                                   python                      
 docker-buildx-plugin                                                          0.25.0-1~debian.12~bookworm             deb                         
 docker-ce                                                                     5:28.3.2-1~debian.12~bookworm           deb                         
 docker-ce-cli                                                                 5:28.3.2-1~debian.12~bookworm           deb                         
@@ -79,6 +88,7 @@ fonts-noto-cjk                                                                1:
 fonts-noto-color-emoji                                                        2.042-0+deb12u1                         deb                         
 fonts-noto-core                                                               20201225-1                              deb                         
 fonts-urw-base35                                                              20200910-7                              deb                         
+frozenlist                                                                    1.7.0                                   python                      
 fuse-overlayfs                                                                1.10-1                                  deb                         
 fuse3                                                                         3.14.0-4                                deb                         
 g++                                                                           4:12.2.0-3                              deb                         
@@ -463,6 +473,7 @@ golang.org/x/text                                                             v0
 golang.org/x/text                                                             v0.24.0                                 go-module  (+2 duplicates)  
 golang.org/x/time                                                             v0.0.0-20220210224613-90d013bbcef8      go-module                   
 golang.org/x/time                                                             v0.11.0                                 go-module  (+2 duplicates)  
+google-crc32c                                                                 1.7.1                                   python                      
 google.golang.org/api                                                         v0.160.0                                go-module                   
 google.golang.org/genproto                                                    v0.0.0-20231211222908-989df2bf70f3      go-module  (+4 duplicates)  
 google.golang.org/genproto                                                    v0.0.0-20240227224415-6ceb2ff114de      go-module                   
@@ -498,6 +509,8 @@ gzip                                                                          1.
 hicolor-icon-theme                                                            0.17-2                                  deb                         
 hostname                                                                      3.23+nmu1                               deb                         
 httplib2                                                                      0.20.4                                  python                      
+idna                                                                          3.10                                    python                      
+ifaddr                                                                        0.2.0                                   python                      
 init-system-helpers                                                           1.65.2                                  deb                         
 intel-media-va-driver                                                         23.1.1+dfsg1-1                          deb                         
 iproute2                                                                      6.1.0-3                                 deb                         
@@ -912,6 +925,7 @@ mesa-va-drivers                                                               25
 mesa-vulkan-drivers                                                           25.0.7-2~bpo12+1                        deb                         
 mount                                                                         2.38.1-5+deb12u3                        deb                         
 msgpack                                                                       1.1.1                                   python                      
+multidict                                                                     6.6.3                                   python                      
 ncurses-base                                                                  6.4-4                                   deb                         
 ncurses-bin                                                                   6.4-4                                   deb                         
 ncurses-term                                                                  6.4-4                                   deb                         
@@ -935,20 +949,25 @@ perl-base                                                                     5.
 perl-modules-5.36                                                             5.36.0-7+deb12u2                        deb                         
 pillow                                                                        11.3.0                                  python                      
 pinentry-curses                                                               1.2.1-1                                 deb                         
-pixelflux                                                                     1.2.9                                   python                      
+pixelflux                                                                     1.3.0                                   python                      
 polkitd                                                                       122-3                                   deb                         
 poppler-data                                                                  0.4.12-1                                deb                         
 procps                                                                        2:4.0.2-3                               deb                         
 prometheus-client                                                             0.22.1                                  python                      
+propcache                                                                     0.3.2                                   python                      
 psmisc                                                                        23.6-1                                  deb                         
 psutil                                                                        7.0.0                                   python                      
 publicsuffix                                                                  20230209.2326-1                         deb                         
 pulseaudio                                                                    16.1+dfsg1-2+b1                         deb                         
 pulseaudio-utils                                                              16.1+dfsg1-2+b1                         deb                         
 pulsectl                                                                      24.12.0                                 python                      
+pycparser                                                                     2.22                                    python                      
+pyee                                                                          13.0.0                                  python                      
 pygobject                                                                     3.42.2                                  python                      
 pyjwt                                                                         2.6.0                                   python                      
+pylibsrtp                                                                     0.12.0                                  python                      
 pynput                                                                        1.8.1                                   python                      
+pyopenssl                                                                     25.1.0                                  python                      
 pyparsing                                                                     3.0.9                                   python                      
 python-apt                                                                    2.6.0                                   python                      
 python-apt-common                                                             2.6.0                                   deb                         
@@ -1006,6 +1025,7 @@ tags.cncf.io/container-device-interface                                       v1
 tags.cncf.io/container-device-interface/specs-go                              v0.8.0                                  go-module                   
 tags.cncf.io/container-device-interface/specs-go                              v1.0.0                                  go-module                   
 tar                                                                           1.34+dfsg-1.2+deb12u1                   deb                         
+typing-extensions                                                             4.14.1                                  python                      
 tzdata                                                                        2025b-0+deb12u1                         deb                         
 ucf                                                                           3.0043+nmu1+deb12u1                     deb                         
 udev                                                                          252.38-1~deb12u1                        deb                         
@@ -1045,4 +1065,5 @@ xserver-xorg-video-radeon                                                     1:
 xterm                                                                         379-1                                   deb                         
 xutils                                                                        1:7.7+23                                deb                         
 xvfb                                                                          2:21.1.7-3+deb12u10                     deb                         
+yarl                                                                          1.20.1                                  python                      
 zlib1g                                                                        1:1.2.13.dfsg-1                         deb                         
