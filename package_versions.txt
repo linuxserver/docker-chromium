@@ -25,9 +25,9 @@ bsdutils                                                                      1:
 ca-certificates                                                               20230311+deb12u1                           deb                         
 catatonit                                                                     0.1.7-1+b1                                 deb                         
 cffi                                                                          1.17.1                                     python                      
-chromium                                                                      138.0.7204.168-1~deb12u1                   deb                         
-chromium-common                                                               138.0.7204.168-1~deb12u1                   deb                         
-chromium-l10n                                                                 138.0.7204.168-1~deb12u1                   deb                         
+chromium                                                                      138.0.7204.183-1~deb12u1                   deb                         
+chromium-common                                                               138.0.7204.183-1~deb12u1                   deb                         
+chromium-l10n                                                                 138.0.7204.183-1~deb12u1                   deb                         
 cli                                                                           UNKNOWN                                    binary                      
 cli-32                                                                        UNKNOWN                                    binary                      
 cli-64                                                                        UNKNOWN                                    binary                      
@@ -817,7 +817,7 @@ libspeexdsp1                                                                  1.
 libsqlite3-0                                                                  3.40.1-2+deb12u1                           deb                         
 libss2                                                                        1.47.0-2                                   deb                         
 libssh2-1                                                                     1.10.0-3+b1                                deb                         
-libssl3                                                                       3.0.16-1~deb12u1                           deb                         
+libssl3                                                                       3.0.17-1~deb12u1                           deb                         
 libstartup-notification0                                                      0.12-6+b1                                  deb                         
 libstdc++-12-dev                                                              12.2.0-14+deb12u1                          deb                         
 libstdc++6                                                                    12.2.0-14+deb12u1                          deb                         
@@ -958,8 +958,8 @@ nginx-common                                                                  1.
 oauthlib                                                                      3.2.2                                      python                      
 ocl-icd-libopencl1                                                            2.3.1-1                                    deb                         
 openbox                                                                       3.6.1-10                                   deb                         
-openssh-client                                                                1:9.2p1-2+deb12u6                          deb                         
-openssl                                                                       3.0.16-1~deb12u1                           deb                         
+openssh-client                                                                1:9.2p1-2+deb12u7                          deb                         
+openssl                                                                       3.0.17-1~deb12u1                           deb                         
 packagekit                                                                    1.2.6-5                                    deb                         
 pasimple                                                                      0.0.3                                      python                      
 passwd                                                                        1:4.13+dfsg1-1+deb12u1                     deb                         
@@ -1038,7 +1038,6 @@ sigs.k8s.io/structured-merge-diff/v4                                          v4
 sigs.k8s.io/yaml                                                              v1.3.0                                     go-module  (+1 duplicate)   
 sigs.k8s.io/yaml                                                              v1.4.0                                     go-module  (+2 duplicates)  
 six                                                                           1.16.0                                     python                      
-six                                                                           1.17.0                                     python                      
 software-properties-common                                                    0.99.30-4.1~deb12u1                        deb                         
 ssl-cert                                                                      1.1.2                                      deb                         
 stdlib                                                                        go1.23.7                                   go-module  (+5 duplicates)  
