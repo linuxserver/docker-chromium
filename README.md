@@ -229,8 +229,6 @@ services:
   chromium:
     image: lscr.io/linuxserver/chromium:latest
     container_name: chromium
-    security_opt:
-      - seccomp:unconfined #optional
     environment:
       - PUID=1000
       - PGID=1000
@@ -250,7 +248,6 @@ services:
 ```bash
 docker run -d \
   --name=chromium \
-  --security-opt seccomp=unconfined `#optional` \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Etc/UTC \
@@ -277,7 +274,6 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-e CHROME_CLI=https://www.linuxserver.io/` | Specify one or multiple Chromium CLI flags, this string will be passed to the application in full. |
 | `-v /config` | Users home directory in the container, stores local files and settings |
 | `--shm-size=` | This is needed for any modern website to function like youtube. |
-| `--security-opt seccomp=unconfined` | For Docker Engine only, many modern gui apps need this to function on older hosts as syscalls are unknown to Docker. Chromium runs in no-sandbox test mode without it. |
 
 ## Environment variables from files (Docker secrets)
 
@@ -441,6 +437,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **22.09.25:** - Rebase to Debian Trixie.
 * **01.07.25:** - Add Kasm branch.
 * **24.06.25:** - Rebase to Selkies.
 * **03.04.25:** - Update chromium launch options to improve performance.
