@@ -33,9 +33,6 @@ custom_params:
 opt_param_usage_include_env: true
 opt_param_env_vars:
   - {env_var: "CHROME_CLI", env_value: "https://www.linuxserver.io/", desc: "Specify one or multiple Chromium CLI flags, this string will be passed to the application in full."}
-opt_security_opt_param: true
-opt_security_opt_param_vars:
-  - {run_var: "seccomp=unconfined", compose_var: "seccomp:unconfined", desc: "For Docker Engine only, many modern gui apps need this to function on older hosts as syscalls are unknown to Docker. Chromium runs in no-sandbox test mode without it."}
 # Selkies blurb settings
 selkies_blurb: true
 show_nvidia: true
@@ -115,6 +112,7 @@ init_diagram: |
   "chromium:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "22.09.25:", desc: "Rebase to Debian Trixie."}
   - {date: "01.07.25:", desc: "Add Kasm branch."}
   - {date: "24.06.25:", desc: "Rebase to Selkies."}
   - {date: "03.04.25:", desc: "Update chromium launch options to improve performance."}
