@@ -114,6 +114,7 @@ init_diagram: |
   "chromium:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "20.12.25:", desc: "Add Wayland init logic."}
   - {date: "22.09.25:", desc: "Rebase to Debian Trixie."}
   - {date: "01.07.25:", desc: "Add Kasm branch."}
   - {date: "24.06.25:", desc: "Rebase to Selkies."}

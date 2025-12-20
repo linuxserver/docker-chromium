@@ -1,0 +1,2 @@
+#!/bin/bash
+wrapped-chromium --enable-features=UseOzonePlatform --ozone-platform=wayland ${CHROME_CLI}
