@@ -54,15 +54,6 @@ The architectures supported by this image are:
 | x86-64 | ✅ | amd64-\<version tag\> |
 | arm64 | ✅ | arm64v8-\<version tag\> |
 
-## Version Tags
-
-This image provides various versions that are available via tags. Please read the descriptions carefully and exercise caution when using unstable or development tags.
-
-| Tag | Available | Description |
-| :----: | :----: |--- |
-| latest | ✅ | Latest releases using the selkies base |
-| kasm | ✅ | Latest releases using the kasmvnc base |
-
 ## Application Setup
 
 The application can be accessed at:
@@ -655,6 +646,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **04.07.26:** - Deprecate Kasm branch.
 * **31.03.26:** - Make Wayland default disable with PIXELFLUX_WAYLAND=false.
 * **20.12.25:** - Add Wayland init logic.
 * **22.09.25:** - Rebase to Debian Trixie.
