@@ -13,10 +13,7 @@ available_architectures:
   - {arch: "{{ arch_x86_64 }}", tag: "latest"}
   - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
 # development version
-development_versions: true
-development_versions_items:
-  - {tag: "latest", desc: "Latest releases using the selkies base"}
-  - {tag: "kasm", desc: "Latest releases using the kasmvnc base"}
+development_versions: false
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
@@ -114,6 +111,7 @@ init_diagram: |
   "chromium:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "04.07.26:", desc: "Deprecate Kasm branch."}
   - {date: "31.03.26:", desc: "Make Wayland default disable with PIXELFLUX_WAYLAND=false."}
   - {date: "20.12.25:", desc: "Add Wayland init logic."}
   - {date: "22.09.25:", desc: "Rebase to Debian Trixie."}
