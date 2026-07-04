@@ -8,6 +8,7 @@ project_blurb: "[Chromium]({{ project_url }}) is an open-source browser project 
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
 project_categories: "Web Browser"
 project_blurb_optional_extras_enabled: false
+project_deprecation_status: true
 # supported architectures
 available_architectures:
   - {arch: "{{ arch_x86_64 }}", tag: "latest"}
@@ -111,6 +112,7 @@ init_diagram: |
   "chromium:kasm" <- Base Images
 # changelog
 changelogs:
+  - {date: "04.07.26:", desc: "Deprecate Kasm branch."}
   - {date: "03.04.25:", desc: "Update chromium launch options to improve performance."}
   - {date: "10.02.24:", desc: "Update Readme with new env vars and ingest proper PWA icon."}
   - {date: "08.01.24:", desc: "Fix re-launch issue for chromium by purging temp files on launch."}
