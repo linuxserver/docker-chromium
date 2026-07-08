@@ -28,9 +28,9 @@ bsdutils                                                                      1:
 ca-certificates                                                               20250419                               deb                         
 catatonit                                                                     0.2.1-2+b13                            deb                         
 cffi                                                                          2.0.0                                  python                      
-chromium                                                                      149.0.7827.196-1~deb13u1               deb                         
-chromium-common                                                               149.0.7827.196-1~deb13u1               deb                         
-chromium-l10n                                                                 149.0.7827.196-1~deb13u1               deb                         
+chromium                                                                      150.0.7871.46-1~deb13u1                deb                         
+chromium-common                                                               150.0.7871.46-1~deb13u1                deb                         
+chromium-l10n                                                                 150.0.7871.46-1~deb13u1                deb                         
 cli                                                                           UNKNOWN                                binary                      
 cli-32                                                                        UNKNOWN                                binary                      
 cli-64                                                                        UNKNOWN                                binary                      
