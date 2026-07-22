@@ -1103,7 +1103,7 @@ util-linux                                                                    2.
 vainfo                                                                        2.22.0+ds1-2                           deb                         
 vulkan-tools                                                                  1.4.304.0+dfsg1-1                      deb                         
 watchdog                                                                      6.0.0                                  python                      
-websockets                                                                    16.1                                   python                      
+websockets                                                                    16.1.1                                 python                      
 wheel                                                                         0.46.3                                 python                      
 wl-clipboard                                                                  2.2.1-2                                deb                         
 wlr-randr                                                                     0.4.1-1                                deb                         
